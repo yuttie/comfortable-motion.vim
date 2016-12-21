@@ -38,7 +38,7 @@ There are three configurable parameters:
 * `g:comfortable_motion_friction` [default: 80.0]
 * `g:comfortable_motion_air_drag` [default: 2.0]
 
-With any of the following configurations, you can get `<C-u>`/`<C-d>` (with the
+For example, with any of the following configurations, you can get `<C-u>`/`<C-d>` (with the
 default impulse value of `-100`/`100`) to scroll a window about 25 lines, but
 tastes are different.
 
