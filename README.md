@@ -4,6 +4,11 @@ Brings physics-based smooth scrolling to the Vim world!
 
 This is highly motivated by the lack of a plugin similar to my favorite Emacs package [emacs-inertial-scroll](https://github.com/kiwanami/emacs-inertial-scroll).
 
+Scroll with `C-d`/`C-u`:
+![Scroll with `C-d`/`C-u`](https://raw.githubusercontent.com/yuttie/comfortable-motion.vim/gh-pages/C-D_C-U.gif)
+
+Scroll with `C-f`/`C-b`:
+![Scroll with `C-f`/`C-b`](https://raw.githubusercontent.com/yuttie/comfortable-motion.vim/gh-pages/C-F_C-B.gif)
 
 ## Installation
 
