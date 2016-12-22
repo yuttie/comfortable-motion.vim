@@ -34,7 +34,7 @@ let s:comfortable_motion_state = {
 \ }
 
 
-function! s:tick()
+function! s:tick(timer_id)
   let l:dt = g:comfortable_motion_interval / 1000.0  " Unit conversion: ms -> s
   let l:st = s:comfortable_motion_state  " This is just an alias for the global variable
 
