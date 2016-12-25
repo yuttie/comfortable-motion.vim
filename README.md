@@ -48,7 +48,7 @@ default impulse value of `-100`/`100`) to scroll a window about 25 lines, but
 tastes are different.
 
 
-### Fricion & Air Resistance
+### Friction & Air Resistance
 
 ```vim
 let g:comfortable_motion_friction = 80.0
@@ -56,7 +56,7 @@ let g:comfortable_motion_air_drag = 2.0
 ```
 
 
-### Fricion Only
+### Friction Only
 
 ```vim
 let g:comfortable_motion_friction = 200.0
