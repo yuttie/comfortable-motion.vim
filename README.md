@@ -34,7 +34,7 @@ To prevent the plugin from defining those default key mappings,
 you can set `g:comfortable_motion_no_default_key_mappings` to 1.
 
 ```vim
-let g:comfortable_motion_no_default_key_mappings') = 1
+let g:comfortable_motion_no_default_key_mappings = 1
 ```
 
 There are three configurable parameters:
