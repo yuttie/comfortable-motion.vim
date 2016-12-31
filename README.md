@@ -10,6 +10,16 @@ Scroll with `C-d`/`C-u`:
 Scroll with `C-f`/`C-b`:
 ![Scroll with `C-f`/`C-b`](https://raw.githubusercontent.com/yuttie/comfortable-motion.vim/gh-pages/C-F_C-B.gif)
 
+
+## Requirements
+This plugin depends on the timer API, which requires Vim/Neovim to be at least the following version:
+
+- Vim 7.4.1578 or above
+- Neovim 0.1.5 or above
+
+However, currently, this plugin is only tested on Vim 8.0 and Neovim 0.1.7, i.e. my current development environment.
+
+
 ## Installation
 
 For example, with [vim-plug](https://github.com/junegunn/vim-plug):
