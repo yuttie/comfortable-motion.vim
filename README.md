@@ -1,6 +1,6 @@
 # comfortable-motion.vim
 
-Brings physics-based smooth scrolling to the Vim world!
+Brings physics-based smooth scrolling to the Vim/Neovim world!
 
 This is highly motivated by the lack of a plugin similar to my favorite Emacs package [emacs-inertial-scroll](https://github.com/kiwanami/emacs-inertial-scroll).
 
