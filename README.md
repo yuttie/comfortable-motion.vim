@@ -5,10 +5,10 @@ Brings physics-based smooth scrolling to the Vim/Neovim world!
 This is highly motivated by the lack of a plugin similar to my favorite Emacs package [emacs-inertial-scroll](https://github.com/kiwanami/emacs-inertial-scroll).
 
 Scroll with `C-d`/`C-u`:
-![Scroll with `C-d`/`C-u`](https://raw.githubusercontent.com/yuttie/comfortable-motion.vim/gh-pages/C-D_C-U.gif)
+![Scroll with `C-d`/`C-u`](https://cloud.githubusercontent.com/assets/158553/21579969/841ab468-d013-11e6-8ce6-aa5442d52b6b.gif)
 
 Scroll with `C-f`/`C-b`:
-![Scroll with `C-f`/`C-b`](https://raw.githubusercontent.com/yuttie/comfortable-motion.vim/gh-pages/C-F_C-B.gif)
+![Scroll with `C-f`/`C-b`](https://cloud.githubusercontent.com/assets/158553/21579968/841929ea-d013-11e6-82fb-e0f3d3e8e896.gif)
 
 
 ## Requirements
