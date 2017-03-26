@@ -36,8 +36,8 @@ By default, the following key mappings are defined.
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 
-nnoremap <silent> <C-f> :call comfortable_motion#flick(400)<CR>
-nnoremap <silent> <C-b> :call comfortable_motion#flick(-400)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(200)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
 ```
 
 To prevent the plugin from defining those default key mappings,
