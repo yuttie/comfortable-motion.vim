@@ -25,6 +25,12 @@ endif
 if !exists('g:comfortable_motion_air_drag')
   let g:comfortable_motion_air_drag = 2.0
 endif
+if !exists('g:comfortable_motion_scroll_down_key')
+  let g:comfortable_motion_scroll_down_key = "\<C-e>"
+endif
+if !exists('g:comfortable_motion_scroll_up_key')
+  let g:comfortable_motion_scroll_up_key = "\<C-y>"
+endif
 
 " The state
 let s:comfortable_motion_state = {
@@ -55,9 +61,9 @@ function! s:tick(timer_id)
   let l:int_delta = float2nr(l:st.delta >= 0 ? floor(l:st.delta) : ceil(l:st.delta))
   let l:st.delta -= l:int_delta
   if l:int_delta > 0
-    execute "normal! " . string(abs(l:int_delta)) . "\<C-e>"
+    execute "normal! " . string(abs(l:int_delta)) . g:comfortable_motion_scroll_down_key
   elseif l:int_delta < 0
-    execute "normal! " . string(abs(l:int_delta)) . "\<C-y>"
+    execute "normal! " . string(abs(l:int_delta)) . g:comfortable_motion_scroll_up_key
   else
     " Do nothing
   endif
