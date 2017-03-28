@@ -40,6 +40,10 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 ```
 
+This results in:
+
+![Different scrolling method](https://cloud.githubusercontent.com/assets/158553/24331179/ebc5b106-1269-11e7-90c2-747a68dec44b.gif)
+
 
 ### Simulation Parameters
 
