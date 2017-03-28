@@ -44,6 +44,9 @@ This results in:
 
 ![Different scrolling method](https://cloud.githubusercontent.com/assets/158553/24331179/ebc5b106-1269-11e7-90c2-747a68dec44b.gif)
 
+Please note that you cannot choose complex keys consisting of multiple motions, e.g. `$j`.
+This is because current implementation prepends the number of scroll amount to the keys, e.g. `5$j`, and executes it once.
+
 
 ### Simulation Parameters
 
