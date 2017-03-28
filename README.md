@@ -30,6 +30,19 @@ Plug 'yuttie/comfortable-motion.vim'
 
 ## Configuration
 
+### Scrolling Method
+
+This plugin relies on `<C-e>` and `<C-y>` by default to actually scroll a window.
+You can customize these keys to other combinations like `j` and `k` as follows:
+
+```vim
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+```
+
+
+### Simulation Parameters
+
 By default, the following key mappings are defined.
 
 ```vim
