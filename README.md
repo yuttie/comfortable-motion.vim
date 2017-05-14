@@ -30,6 +30,8 @@ Plug 'yuttie/comfortable-motion.vim'
 
 ## Configuration
 
+Please note that the following mappings for `<C-d>` and `<C-u>` are not ones for you if you expect they scroll a buffer just half a window.
+
 ### Scrolling Method
 
 This plugin relies on `<C-e>` and `<C-y>` by default to actually scroll a window.
