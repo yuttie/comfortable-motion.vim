@@ -50,7 +50,7 @@ Please note that you cannot choose complex keys consisting of multiple motions, 
 This is because the current implementation prepends the number of scroll amount to the keys, e.g. `5$j`, and executes it once per simulation tick.
 
 
-### Simulation Parameters
+### Keys and Mouse Wheel
 
 By default, the following key mappings are defined.
 
@@ -68,6 +68,18 @@ you can set `g:comfortable_motion_no_default_key_mappings` to 1.
 ```vim
 let g:comfortable_motion_no_default_key_mappings = 1
 ```
+
+Additionally, if your Vim/NeoVim has mouse support, you can get mouse wheel to scroll a window by the following mappings:
+
+```vim
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+```
+
+You may need to enable the `mouse` option for the above to work, for example, by `set mouse=a`.
+
+
+### Simulation Parameters
 
 There are three configurable parameters:
 
