@@ -50,7 +50,7 @@ Please note that you cannot choose complex keys consisting of multiple motions, 
 This is because the current implementation prepends the number of scroll amount to the keys, e.g. `5$j`, and executes it once per simulation tick.
 
 
-### Simulation Parameters
+### Keys and Mouse Wheel
 
 By default, the following key mappings are defined.
 
@@ -69,16 +69,18 @@ you can set `g:comfortable_motion_no_default_key_mappings` to 1.
 let g:comfortable_motion_no_default_key_mappings = 1
 ```
 
-If you would like to use scrolling proportional to the window height,
-you may use settings such as these:
+
+Additionally, if your Vim/NeoVim has mouse support, you can get mouse wheel to scroll a window by the following mappings:
+
 ```vim
-let g:comfortable_motion_no_default_key_mappings = 1
-let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
-nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
-nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
-nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
-nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 ```
+
+You may need to enable the `mouse` option for the above to work, for example, by `set mouse=a`.
+
+
+### Simulation Parameters
 
 There are three configurable parameters:
 
@@ -112,6 +114,20 @@ let g:comfortable_motion_air_drag = 0.0
 ```vim
 let g:comfortable_motion_friction = 0.0
 let g:comfortable_motion_air_drag = 4.0
+```
+
+
+## Advanced Configurations
+
+If you would like to use scrolling proportional to the window height,
+you may use settings such as these:
+```vim
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
 ```
 
 
