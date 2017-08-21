@@ -69,6 +69,7 @@ you can set `g:comfortable_motion_no_default_key_mappings` to 1.
 let g:comfortable_motion_no_default_key_mappings = 1
 ```
 
+
 Additionally, if your Vim/NeoVim has mouse support, you can get mouse wheel to scroll a window by the following mappings:
 
 ```vim
@@ -113,6 +114,20 @@ let g:comfortable_motion_air_drag = 0.0
 ```vim
 let g:comfortable_motion_friction = 0.0
 let g:comfortable_motion_air_drag = 4.0
+```
+
+
+## Advanced Configurations
+
+If you would like to use scrolling proportional to the window height,
+you may use settings such as these:
+```vim
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
 ```
 
 
