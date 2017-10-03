@@ -67,6 +67,7 @@ function! s:tick(timer_id)
   else
     " Do nothing
   endif
+  redraw
 
   " Stop the thread or continue it
   if abs(l:st.velocity) < 1
