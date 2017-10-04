@@ -75,16 +75,21 @@ function! s:tick(timer_id)
       let l:st.velocity = 0
       let l:st.delta = 0
     endif
+  else
+    call timer_stop(s:timer_id)
+    unlet s:timer_id
   endif
 endfunction
 
 function! comfortable_motion#flick(impulse)
+  if !exists('s:timer_id')
+    " There is no thread, start one
+    let l:interval = float2nr(round(g:comfortable_motion_interval))
+    let s:timer_id = timer_start(l:interval, function("s:tick"), {'repeat': -1})
+  endif
   let s:comfortable_motion_state.impulse += a:impulse
 endfunction
 
-" Start a thread
-let s:interval = float2nr(round(g:comfortable_motion_interval))
-call timer_start(s:interval, function("s:tick"), {'repeat': -1})
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
