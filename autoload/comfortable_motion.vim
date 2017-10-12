@@ -90,6 +90,5 @@ function! comfortable_motion#flick(impulse)
   let s:comfortable_motion_state.impulse += a:impulse
 endfunction
 
-
 let &cpo = s:save_cpo
 unlet s:save_cpo
