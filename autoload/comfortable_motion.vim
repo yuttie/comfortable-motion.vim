@@ -69,13 +69,10 @@ function! s:tick(timer_id)
       " Do nothing
     endif
     redraw
-
-    " Stop the thread or continue it
-    if abs(l:st.velocity) < 1
-      let l:st.velocity = 0
-      let l:st.delta = 0
-    endif
   else
+    " Stop scrolling and the thread
+    let l:st.velocity = 0
+    let l:st.delta = 0
     call timer_stop(s:timer_id)
     unlet s:timer_id
   endif
