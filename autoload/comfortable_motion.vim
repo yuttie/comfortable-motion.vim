@@ -42,7 +42,7 @@ let s:comfortable_motion_state = {
 function! s:tick(timer_id)
 
   let l:st = s:comfortable_motion_state  " This is just an alias for the global variable
-  if abs(l:st.velocity) > 1 || l:st.impulse != 0 " short-circuit if velocity is zero
+  if abs(l:st.velocity) >= 1 || l:st.impulse != 0 " short-circuit if velocity is less than one
     let l:dt = g:comfortable_motion_interval / 1000.0  " Unit conversion: ms -> s
 
     " Compute resistance forces
