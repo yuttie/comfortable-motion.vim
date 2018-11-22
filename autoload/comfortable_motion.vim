@@ -38,6 +38,7 @@ let s:comfortable_motion_state = {
 \ 'velocity': 0.0,
 \ 'delta': 0.0,
 \ 'air_drag' : 0.0,
+\ 'syntax' : ''
 \ }
 
 function! s:tick(timer_id)
@@ -91,6 +92,8 @@ function! s:tick(timer_id)
       let l:st.delta = 0
     endif
   else
+    execute "setlocal syntax=".s:comfortable_motion_state.syntax
+    "let g:airline#extensions#wordcount#enabled = 1
     " Stop scrolling and the thread
     let l:st.velocity = 0
     let l:st.delta = 0
@@ -103,17 +106,25 @@ function! comfortable_motion#flick_impl(impulse, air_drag)
   let l:st = s:comfortable_motion_state  " This is just an alias for the global variable
   let l:st.air_drag = a:air_drag
   if !exists('s:timer_id')
+    let s:comfortable_motion_state.syntax = &syntax
+    "let g:airline#extensions#wordcount#enabled = 0
     " There is no thread, start one
     let l:interval = float2nr(round(g:comfortable_motion_interval))
     let s:timer_id = timer_start(l:interval, function("s:tick"), {'repeat': -1})
+  else
+    if l:st.velocity > a:impulse * 3
+      execute "setlocal syntax="
+    endif
   endif
 
   " stop if velocity and impulse is not same direction
   if ( l:st.velocity > 0 && a:impulse < 0 )
     \ || ( l:st.velocity < 0 && a:impulse > 0 )
-    let s:comfortable_motion_state.impulse -= l:st.velocity * 4 / 5 "stop smoothly
+    "let s:comfortable_motion_state.impulse -= l:st.velocity * 4 / 5
+    "let s:comfortable_motion_state.impulse = a:impulse
+    let s:comfortable_motion_state.impulse += a:impulse
   else
-    let s:comfortable_motion_state.impulse = a:impulse - l:st.velocity
+    let s:comfortable_motion_state.impulse += a:impulse - l:st.velocity * 0.6
   endif
 endfunction
 
