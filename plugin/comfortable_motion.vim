@@ -22,6 +22,16 @@ if !exists('g:comfortable_motion_no_default_key_mappings') ||
 
   nnoremap <silent> <C-f> :call comfortable_motion#flick(200)<CR>
   nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
+
+  nnoremap <silent> <PageDown> :call comfortable_motion#flick(200)<CR>
+  nnoremap <silent> <PageUp> :call comfortable_motion#flick(-200)<CR>
+  inoremap <silent> <PageDown> <C-O>:call comfortable_motion#flick(200)<CR>
+  inoremap <silent> <PageUp> <C-O>:call comfortable_motion#flick(-200)<CR>
+
+  nnoremap <silent> <S-Down> :call comfortable_motion#flick(200)<CR>
+  nnoremap <silent> <S-Up> :call comfortable_motion#flick(-200)<CR>
+  inoremap <silent> <S-Down> <C-O>:call comfortable_motion#flick(200)<CR>
+  inoremap <silent> <S-Up> <C-O>:call comfortable_motion#flick(-200)<CR>
 endif
 
 
