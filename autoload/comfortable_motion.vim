@@ -80,11 +80,22 @@ endfunction
 
 function! comfortable_motion#flick(impulse)
   if !exists('s:timer_id')
-    " There is no thread, start one
+    " there is no thread, start one
     let l:interval = float2nr(round(g:comfortable_motion_interval))
     let s:timer_id = timer_start(l:interval, function("s:tick"), {'repeat': -1})
   endif
-  let s:comfortable_motion_state.impulse += a:impulse
+  " If the current velocity if not going in the same direction as the command
+  if a:impulse > 0 && s:comfortable_motion_state.velocity < 0 || a:impulse < 0 && s:comfortable_motion_state.velocity > 0
+    " Stop the scolling
+    call comfortable_motion#stop()
+  else
+    " Add the impulse to the scolling
+    let s:comfortable_motion_state.impulse += a:impulse
+  endif
+endfunction
+
+function! comfortable_motion#stop()
+  let s:comfortable_motion_state.velocity = 0.0
 endfunction
 
 let &cpo = s:save_cpo
