@@ -24,6 +24,7 @@ if !exists('g:comfortable_motion_no_default_key_mappings') ||
   nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
 endif
 
+autocmd TermEnter * call comfortable_motion#stop()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

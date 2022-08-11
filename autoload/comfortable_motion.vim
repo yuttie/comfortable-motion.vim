@@ -87,5 +87,9 @@ function! comfortable_motion#flick(impulse)
   let s:comfortable_motion_state.impulse += a:impulse
 endfunction
 
+function! comfortable_motion#stop()
+  let s:comfortable_motion_state.velocity = 0.0
+endfunction
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
